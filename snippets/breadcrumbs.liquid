@@ -1,0 +1,19 @@
+<nav class="text-sm text-gray-600 mb-4" aria-label="Breadcrumb">
+  <ol class="flex items-center gap-2">
+    <li><a href="{{ routes.root_url }}" class="hover:underline">Home</a></li>
+    {% if template.name == 'collection' %}
+      <li aria-hidden="true">/</li>
+      <li><span class="text-gray-900">{{ collection.title }}</span></li>
+    {% elsif template.name == 'product' %}
+      {% if collection %}
+        <li aria-hidden="true">/</li>
+        <li><a href="{{ collection.url }}" class="hover:underline">{{ collection.title }}</a></li>
+      {% endif %}
+      <li aria-hidden="true">/</li>
+      <li><span class="text-gray-900">{{ product.title }}</span></li>
+    {% elsif template.name == 'page' %}
+      <li aria-hidden="true">/</li>
+      <li><span class="text-gray-900">{{ page.title }}</span></li>
+    {% endif %}
+  </ol>
+</nav>

@@ -1,0 +1,35 @@
+<header class="border-b">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
+    <a href="{{ routes.root_url }}" class="flex items-center gap-3">
+      {% if settings.logo != blank %}
+        <img src="{{ settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}" class="h-8 w-auto">
+      {% else %}
+        <span class="text-xl font-semibold">{{ shop.name }}</span>
+      {% endif %}
+    </a>
+
+    {% if settings.main_menu != blank %}
+      <nav class="hidden md:block">
+        <ul class="flex items-center gap-6">
+          {% for link in linklists[settings.main_menu].links %}
+            <li>
+              <a href="{{ link.url }}" class="text-sm hover:text-gray-900 text-gray-700">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    <div class="flex items-center gap-4">
+      <a href="{{ routes.search_url }}" class="text-sm text-gray-700 hover:text-gray-900">Search</a>
+      <a href="{{ routes.cart_url }}" class="text-sm text-gray-700 hover:text-gray-900">Cart ({{ cart.item_count }})</a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{% if product %}
+  {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+    <span class="line-through text-gray-500 mr-2">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+  {% endif %}
+  <span class="font-semibold">{{ product.selected_or_first_available_variant.price | money }}</span>
+{% elsif variant %}
+  {% if variant.compare_at_price > variant.price %}
+    <span class="line-through text-gray-500 mr-2">{{ variant.compare_at_price | money }}</span>
+  {% endif %}
+  <span class="font-semibold">{{ variant.price | money }}</span>
+{% endif %}

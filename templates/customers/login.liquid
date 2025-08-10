@@ -1,0 +1,15 @@
+<section class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-semibold mb-6">Login</h1>
+  {% form 'customer_login' %}
+    <div class="mb-4">
+      <label for="CustomerEmail" class="block text-sm font-medium mb-1">Email</label>
+      <input id="CustomerEmail" type="email" name="customer[email]" class="w-full border rounded px-3 py-2" required>
+    </div>
+    <div class="mb-6">
+      <label for="CustomerPassword" class="block text-sm font-medium mb-1">Password</label>
+      <input id="CustomerPassword" type="password" name="customer[password]" class="w-full border rounded px-3 py-2" required>
+    </div>
+    <button class="bg-gray-900 text-white px-5 py-2 rounded hover:bg-black">Sign in</button>
+    <a href="{{ routes.account_register_url }}" class="ml-3 text-sm text-gray-700 hover:text-gray-900">Create account</a>
+  {% endform %}
+</section>

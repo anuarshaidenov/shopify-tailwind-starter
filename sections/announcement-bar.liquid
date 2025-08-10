@@ -1,0 +1,12 @@
+{% if settings.show_announcement and settings.announcement_text != blank %}
+  <div class="w-full bg-gray-900 text-white text-sm text-center py-2">
+    {{ settings.announcement_text }}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": []
+}
+{% endschema %}

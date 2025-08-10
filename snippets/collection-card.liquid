@@ -1,0 +1,14 @@
+{%- assign c = collection -%}
+<article class="group border rounded overflow-hidden hover:shadow-sm transition">
+  <a href="{{ c.url }}" class="block">
+    {% if c.image %}
+      <img src="{{ c.image | image_url: width: 1200 }}" alt="{{ c.title }}" class="w-full aspect-[4/3] object-cover">
+    {% else %}
+      <div class="w-full aspect-[4/3] bg-gray-100"></div>
+    {% endif %}
+    <div class="p-3">
+      <h3 class="text-sm font-medium group-hover:underline">{{ c.title }}</h3>
+      <div class="text-xs text-gray-600">{{ c.all_products_count }} products</div>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show announcement bar",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "Welcome to our store!"
+      },
+      {
+        "type": "link_list",
+        "id": "main_menu",
+        "label": "Main menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "footer_menu",
+        "label": "Footer menu"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_note",
+        "label": "Footer note",
+        "default": "© {{ shop.name }}"
+      }
+    ]
+  }
+]

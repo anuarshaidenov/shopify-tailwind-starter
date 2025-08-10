@@ -1,0 +1,22 @@
+<section class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-semibold mb-6">Create account</h1>
+  {% form 'create_customer' %}
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-1">First name</label>
+      <input type="text" name="customer[first_name]" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-1">Last name</label>
+      <input type="text" name="customer[last_name]" class="w-full border rounded px-3 py-2">
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-1">Email</label>
+      <input type="email" name="customer[email]" class="w-full border rounded px-3 py-2" required>
+    </div>
+    <div class="mb-6">
+      <label class="block text-sm font-medium mb-1">Password</label>
+      <input type="password" name="customer[password]" class="w-full border rounded px-3 py-2" required>
+    </div>
+    <button class="bg-gray-900 text-white px-5 py-2 rounded hover:bg-black">Create</button>
+  {% endform %}
+</section>

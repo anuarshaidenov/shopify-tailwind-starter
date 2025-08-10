@@ -1,0 +1,19 @@
+<section class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-semibold mb-6">Order {{ order.name }}</h1>
+  <div class="text-sm text-gray-600 mb-4">Placed on {{ order.created_at | date: format: 'date' }}</div>
+  <div class="border rounded p-4">
+    <h2 class="text-lg font-semibold mb-3">Items</h2>
+    <ul class="space-y-2">
+      {% for line_item in order.line_items %}
+        <li class="flex items-center justify-between">
+          <span>{{ line_item.title }} × {{ line_item.quantity }}</span>
+          <span>{{ line_item.line_price | money }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="mt-4">
+      <div class="flex justify-between"><span>Subtotal</span><span>{{ order.subtotal_price | money }}</span></div>
+      <div class="flex justify-between"><span>Total</span><span class="font-semibold">{{ order.total_price | money }}</span></div>
+    </div>
+  </div>
+</section>

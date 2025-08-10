@@ -1,0 +1,13 @@
+{% if paginate.pages > 1 %}
+  <nav role="navigation" class="flex items-center justify-center gap-2 my-8">
+    {% if paginate.previous %}
+      <a href="{{ paginate.previous.url }}" class="px-3 py-1 border rounded text-sm hover:bg-gray-50">{{ 'general.pagination.previous' | t }}</a>
+    {% endif %}
+
+    <span class="text-sm text-gray-600">Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+
+    {% if paginate.next %}
+      <a href="{{ paginate.next.url }}" class="px-3 py-1 border rounded text-sm hover:bg-gray-50">{{ 'general.pagination.next' | t }}</a>
+    {% endif %}
+  </nav>
+{% endif %}

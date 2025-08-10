@@ -1,0 +1,15 @@
+<article class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-semibold mb-2">{{ article.title }}</h1>
+  <p class="text-gray-500 mb-6">{{ article.published_at | time_tag: format: 'date' }}</p>
+  {% if article.image %}
+    <img src="{{ article.image | image_url: width: 1600 }}" alt="{{ article.title }}" class="rounded mb-6">
+  {% endif %}
+  <div class="text-gray-800 space-y-4">{{ article.content }}</div>
+</article>
+
+{% schema %}
+{
+  "name": "Main article",
+  "settings": []
+}
+{% endschema %}

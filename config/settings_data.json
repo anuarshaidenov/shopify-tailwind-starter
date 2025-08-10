@@ -1,0 +1,11 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "theme_settings": {
+        "show_announcement": true,
+        "announcement_text": "Welcome to our store!"
+      }
+    }
+  }
+}

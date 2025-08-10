@@ -1,0 +1,12 @@
+<meta name="theme-color" content="#111827">
+<meta property="og:site_name" content="{{ shop.name }}">
+{% if page_title %}
+  <meta property="og:title" content="{{ page_title }}">
+{% endif %}
+{% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  <meta property="og:description" content="{{ page_description | escape }}">
+{% endif %}
+{% if canonical_url %}
+  <link rel="canonical" href="{{ canonical_url }}">
+{% endif %}
